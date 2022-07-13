@@ -16,6 +16,8 @@ msg['To'] = target
 with open('templates/google-alert.html', 'r') as f:
     html = f.read()
 
+html.replace("example@gmail.com", target)
+
 msg.attach(MIMEText(html, 'html'))
 
 server = smtplib.SMTP('smtp.gmail.com', 587)
