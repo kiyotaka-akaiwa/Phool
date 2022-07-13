@@ -6,12 +6,11 @@ from email.mime.text import MIMEText
 
 username = "my@gmail.com"
 password = "password"
-fake_email = "no-reply@accounts.google.com"
 target = "target@gmail.com"
 
 msg = MIMEMultipart('alternative')
 msg['Subject'] = "Security alert"
-msg['From'] = fake_email
+msg['From'] = username
 msg['To'] = target
 
 with open('templates/google-alert.html', 'r') as f:
