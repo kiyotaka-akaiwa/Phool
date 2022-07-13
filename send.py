@@ -23,7 +23,7 @@ if template == "Google Alert":
     html.replace("[EMAIL]", target)
 
 elif template == "Amazon Cancellation":
-    msg['Subject'] = "Your Amazon.com order of "2021 Apple MacBook P..." has been canceled."
+    msg['Subject'] = 'Your Amazon.com order of "2021 Apple MacBook P..." has been canceled.'
 
     with open('templates/amazon-cancellation.html', 'r') as f:
         html = f.read()
