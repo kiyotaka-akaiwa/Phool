@@ -4,19 +4,35 @@ import smtplib
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 
-username = "my@gmail.com"
-password = "password"
-target = "target@gmail.com"
+username = input("Please enter the Gmail address you will be sending the email from: ")
+password = input("Please enter the password for the account (Must be App Passwords): ")
+target = input("Please enter the target's email address: ")
 
 msg = MIMEMultipart('alternative')
-msg['Subject'] = "Security alert"
 msg['From'] = username
 msg['To'] = target
 
-with open('templates/google-alert.html', 'r') as f:
-    html = f.read()
+template = input("Please enter the template you will be using: ")
 
-html.replace("example@gmail.com", target)
+if template == "Google Alert":
+    msg['Subject'] = "Security alert"
+
+    with open('templates/google-alert.html', 'r') as f:
+        html = f.read()
+
+    html.replace("[EMAIL]", target)
+
+elif template == "Amazon Cancellation":
+    msg['Subject'] = "Your Amazon.com order of "2021 Apple MacBook P..." has been canceled."
+
+    with open('templates/amazon-cancellation.html', 'r') as f:
+        html = f.read()
+
+    html.replace("[FIRSTNAME]", target)
+    html.replace("[DAYOFWEEK]", target)
+    html.replace("[MONTH]", target)
+    html.replace("[DD]", target)
+    html.replace("[YYYY]", target)
 
 msg.attach(MIMEText(html, 'html'))
 
