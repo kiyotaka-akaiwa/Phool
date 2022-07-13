@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 
+from datetime import date
 import smtplib
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
@@ -28,11 +29,10 @@ elif template == "Amazon Cancellation":
     with open('templates/amazon-cancellation.html', 'r') as f:
         html = f.read()
 
-    html.replace("[FIRSTNAME]", target)
-    html.replace("[DAYOFWEEK]", target)
-    html.replace("[MONTH]", target)
-    html.replace("[DD]", target)
-    html.replace("[YYYY]", target)
+    firstname = input("Please enter the target's first name: ")
+
+    html.replace("[FIRSTNAME]", firstname)
+    html.replace("[DATE]", date.today.strftime("%A, %B %d, %Y"))
 
 msg.attach(MIMEText(html, 'html'))
 
