@@ -21,7 +21,7 @@ if template == "Google Alert":
     with open('templates/google-alert.html', 'r') as f:
         html = f.read()
 
-    html.replace("EMAIL", target)
+    html = html.replace("EMAIL", target)
 
 elif template == "Amazon Cancellation":
     msg['Subject'] = 'Your Amazon.com order of "2021 Apple MacBook P..." has been canceled.'
@@ -31,8 +31,8 @@ elif template == "Amazon Cancellation":
 
     firstname = input("Please enter the target's first name: ")
 
-    html.replace("FIRSTNAME", firstname)
-    html.replace("DATE", datetime.today().strftime("%A, %B %d, %Y"))
+    html = html.replace("FIRSTNAME", firstname)
+    html = html.replace("DATE", datetime.today().strftime("%A, %B %d, %Y"))
 
 msg.attach(MIMEText(html, 'html'))
 
