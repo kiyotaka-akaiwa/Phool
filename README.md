@@ -2,7 +2,7 @@
 
 WARNING: The script provided is intended for educational purposes only. Any use of this script for any illegal or unauthorized purpose is strictly prohibited. The creator of this script assumes no liability for any misuse or damage caused by this script. Use at your own risk.
 
-ntroducing a sophisticated phishing tool that enables you to send targeted and convincing phishing emails to your intended victim. The tool comprises two modules that enhance your phishing campaign's effectiveness by leveraging email templates and advanced artificial intelligence.
+Introducing a sophisticated phishing tool that enables you to send targeted and convincing phishing emails to your intended victim. The tool comprises two modules that enhance your phishing campaign's effectiveness by leveraging email templates and advanced artificial intelligence.
 
 The first module, Template, features email templates from renowned companies. It creates a realistic phishing email that appears to be originating from a legitimate source, thus increasing the likelihood of the target clicking on the email's embedded links or attachments.
 
